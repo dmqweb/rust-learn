@@ -2,10 +2,18 @@ use std::vec;
 
 fn main() {
     //loop无限循环
-    loop {
-        println!("loop无限循环，直到break");
-        break;
-    }
+    let mut index = 0;
+    let res = 'myloop: loop {
+        if index == 5 {
+            index += 1;
+            continue 'myloop;
+        } else if index == 10 {
+            break 'myloop true;
+        }
+        println!("{index}");
+        index += 1;
+    };
+    println!("loop循环返回结果：{res}");
     //while条件循环
     let mut count = 0;
     while count < 2 {

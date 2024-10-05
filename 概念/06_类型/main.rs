@@ -31,7 +31,8 @@ fn main() {
     let _arr: [i32; 3] = [1, 2, 3]; //数组类型必须一致,类型定义的首项为类型,尾项为个数
     let _vec_arr: Vec<i32> = vec![1, 2, 3, 4]; //动态大小的数组
     let _init_arr = [0; 100]; //数组赋值使用;代表批量赋值到某长度
-    let _arr_slice = &_arr[1..2]; //数组索引切片,不包含尾
+                              // 数组切片类型不包含数组个数
+    let _arr_slice: &[i32] = &_arr[1..2]; //数组索引切片,不包含尾
 
     //双端队列
     let mut deque: VecDeque<i32> = VecDeque::new();
@@ -65,6 +66,7 @@ fn main() {
     //Option<T> 值可能存在可能不存在
     let _option_value: Option<i32> = Some(10);
     let _option_: Option<_> = Some(10);
+    let _option: Option<i32> = None;
 
     //Result<T,E> 操作可能成功或者失败
     fn divide(a: f64, b: f64) -> Result<f64, &'static str> {
@@ -77,11 +79,11 @@ fn main() {
     let result = divide(10.0, 2.0);
     println!("The result is: {:?}", result);
 
-    //Box<T>智能指针(指向堆上的数据)
+    //Box<T>智能指针(指向堆上的数据)，智能指针拥有数据的所有权
     let _box_data = Box::new(10);
 
     //Rc<T>引用计数类型(允许有多个所有者)
-    let data = Rc::new(10);
+    let data = Rc::new([1, 2, 3]);
     let another = Rc::clone(&data);
     println!("两者相等: {}", data == another);
 
