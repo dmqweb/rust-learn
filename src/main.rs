@@ -1,13 +1,13 @@
 fn main() {
-    println!("{}", calcate(51));
+    hello()
 }
-fn calcate(num: u32) -> u32 {
-    if is_even(num) {
-        num - 10
-    } else {
-        num - 2
+fn hello() {
+    let ch = "你好世界";
+    let en = "Hello world";
+    let region = [en, ch];
+    for region in region.iter() {
+        println!("{region}");
     }
-}
-fn is_even(num: u32) -> bool {
-    num % 2 == 0
+    let arr: [i32; 3] = [1, 2, 3];
+    println!("{}", arr.len());
 }

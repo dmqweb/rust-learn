@@ -1,8 +1,8 @@
 fn main() {
     //执行多国输出语句
-    greet_world();
+    hello();
 }
-fn greet_world() {
+fn hello() {
     let english = "world hello";
     let chinese = "你好世界";
     let regions = [english, chinese];

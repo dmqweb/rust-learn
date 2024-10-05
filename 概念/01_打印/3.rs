@@ -36,7 +36,7 @@ fn main() {
         println!("块级作用域遮蔽:{}", x);
     }
     println!("遮蔽之后的变量为:{}", x);
-    //如果无需再使用之前的变量,就可以使用重复的变量进行遮蔽
+    //如果无需再使用之前的变量,就可以使用重复的变量进行 遮蔽
     let spaces = "       ";
     let spaces = spaces.len();
     println!("{}", spaces);
@@ -44,8 +44,12 @@ fn main() {
     let mut _str = "    ";
     // _str = str.len(); 报错
     //直接打印变量
-    let char = "直接输出";
+    let char_str = '符';
+    let string_str = "字符串类型";
     let arr = [1, 2];
-    println!("{char}");
+    println!("{char_str},{string_str}");
     println!("{arr:?}");
+    type A = [i32; 3]; //type关键字定义新类型
+    let a_instance: A = [1, 2, 3];
+    println!("{a_instance:?}");
 }
